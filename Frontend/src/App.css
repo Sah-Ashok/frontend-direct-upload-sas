@@ -1,42 +1,180 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ── Register ── */
+.register-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.register-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a2e;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.register-container input[type="text"],
+.register-container input[type="email"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  outline: none;
+  margin-bottom: 1rem;
 }
 
-.card {
-  padding: 2em;
+.register-container input[type="text"]:focus,
+.register-container input[type="email"]:focus {
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.15);
 }
 
-.read-the-docs {
-  color: #888;
+.register-container input[type="file"] {
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.preview-section {
+  margin-top: 1rem;
+}
+
+.preview-section h4 {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.preview-section img {
+  border-radius: 50%;
+  border: 3px solid #646cff;
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+}
+
+.register-container button {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 12px;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+.register-container button:hover {
+  background-color: #535bf2;
+}
+
+.register-container button:active {
+  transform: scale(0.98);
+}
+
+/* ── Divider ── */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* ── Profile ── */
+.profile-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.profile-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a2e;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f8f9ff;
+  border: 1px solid #e0e3ff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.user-card:hover {
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.12);
+}
+
+.user-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #646cff;
+  flex-shrink: 0;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-info h3 {
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.user-info p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.delete-btn {
+  padding: 8px 16px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background-color: #c62828;
+}
+
+.delete-btn:active {
+  transform: scale(0.97);
 }
