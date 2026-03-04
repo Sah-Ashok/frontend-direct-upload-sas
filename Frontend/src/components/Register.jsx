@@ -47,50 +47,39 @@ function Register() {
   };
 
   return (
-    <div style={{ padding: "40px" }}>
+    <div className="register-container">
       <h2>Register</h2>
 
-      <div>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
-      <br />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
 
-      <div>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
+      <input
+        type="file"
+        onChange={(e) => {
+          const selectedFile = e.target.files[0];
+          setFile(selectedFile);
+          setPreview(URL.createObjectURL(selectedFile));
+        }}
+      />
 
-      <br />
-
-      <div>
-        <input
-          type="file"
-          onChange={(e) => {
-            const selectedFile = e.target.files[0];
-            setFile(selectedFile);
-            setPreview(URL.createObjectURL(selectedFile));
-          }}
-        />
-      </div>
-
-      <br />
       {preview && (
-        <div>
+        <div className="preview-section">
           <h4>Preview</h4>
-          <img src={preview} width="200" />
+          <img src={preview} alt="preview" />
         </div>
       )}
-      <br />
+
       <button onClick={handleRegister}>Register</button>
     </div>
   );

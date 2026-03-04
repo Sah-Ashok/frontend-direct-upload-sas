@@ -22,26 +22,19 @@ function Profile() {
   }, []);
 
   return (
-    <div style={{ padding: "40px" }}>
+    <div className="profile-container">
       <h2>Users</h2>
 
       {users.map((user, index) => (
-        <div key={index} style={{ marginBottom: "20px" }}>
-          <h3>{user.name}</h3>
-          <p>{user.email}</p>
-
-          <img src={user.profileImage} width="150" />
-
+        <div key={index} className="user-card">
+          <img src={user.profileImage} alt={user.name} />
+          <div className="user-info">
+            <h3>{user.name}</h3>
+            <p>{user.email}</p>
+          </div>
           <button
+            className="delete-btn"
             onClick={() => handleDelete(user.email)}
-            style={{
-              marginTop: "10px",
-              color: "white",
-              background: "red",
-              border: "none",
-              padding: "6px 12px",
-              cursor: "pointer",
-            }}
           >
             Delete
           </button>
